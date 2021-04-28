@@ -9,7 +9,11 @@ class Hiker
   end
 
   def pack(snack, quantity)
-    @snacks[snack] = quantity
+    if !@snacks.has_key?(snack)
+      @snacks[snack] = quantity
+    else
+      @snacks[snack] = @snacks[snack] + quantity
+    end
   end
 
   def visit(park)

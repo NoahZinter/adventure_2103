@@ -41,7 +41,7 @@ describe Hiker do
       expect(hiker.snacks).to eq expected
     end
 
-    xit 'will update quantity of snack already exists' do
+    it 'will update quantity of snack already exists' do
       hiker = Hiker.new('Dora', :moderate)
       hiker.pack('water', 1)
       hiker.pack('trail mix', 3)
