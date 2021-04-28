@@ -116,4 +116,16 @@ describe Hiker do
       expect(hiker.possible_trails).to eq expected
     end
   end
+
+  describe '#favorite_snack' do
+    it 'returns the name of the item packed with highest quantity' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 2)
+      hiker.pack('apple', 4)
+      hiker.pack('trail mix', 1)
+      hiker.pack('carrot', 3)
+
+      expect(hiker.favorite_snack).to eq 'apple'
+    end
+  end
 end
