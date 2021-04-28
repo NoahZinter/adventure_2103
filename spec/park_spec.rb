@@ -120,23 +120,56 @@ describe Park do
     end
   end
 
-  describe '#visitors_log' do
-    it 'populates a nested hash with a year holding a date/hiker kv pair with possible trails' do
-      trail1 = Trail.new({name: 'Rim Trail', length: '11 miles', level: :easy})
-      trail2 = Trail.new({name: "Queen's/Navajo Loop", length: '2.9 miles', level: :moderate})
-      trail3 = Trail.new({name: 'Tower Bridge', length: '3 miles', level: :moderate})
-      trail4 = Trail.new({name: 'Peekaboo Loop', length: '5.5 miles', level: :strenuous})
-      park = Park.new('Bryce Canyon')
-      park.add_trail(trail1)
-      park.add_trail(trail2)
-      park.add_trail(trail3)
-      park.add_trail(trail4)
-      hiker1 = Hiker.new('Dora', :moderate)
-      hiker2 = Hiker.new('Frank', :easy)
-      hiker3 = Hiker.new('Jack', :strenuous)
-      hiker4 = Hiker.new('Sally', :strenuous)
+  # describe '#visitors_log' do
+  #   it 'populates a nested hash with a year holding a date/hiker kv pair with possible trails' do
+  #     trail1 = Trail.new({name: 'Rim Trail', length: '11 miles', level: :easy})
+  #     trail2 = Trail.new({name: "Queen's/Navajo Loop", length: '2.9 miles', level: :moderate})
+  #     trail3 = Trail.new({name: 'Tower Bridge', length: '3 miles', level: :moderate})
+  #     trail4 = Trail.new({name: 'Peekaboo Loop', length: '5.5 miles', level: :strenuous})
+  #     park = Park.new('Bryce Canyon')
+  #     park.add_trail(trail1)
+  #     park.add_trail(trail2)
+  #     park.add_trail(trail3)
+  #     park.add_trail(trail4)
+  #     hiker1 = Hiker.new('Dora', :moderate)
+  #     hiker2 = Hiker.new('Frank', :easy)
+  #     hiker3 = Hiker.new('Jack', :strenuous)
+  #     hiker4 = Hiker.new('Sally', :strenuous)
 
-      
-    end
-  end
+  #     hiker1.visit(park, Date.new(1980, 6, 23))
+  #     hiker2.visit(park, Date.new(1980, 6, 24))
+  #     hiker3.visit(park, Date.new(1980, 6, 24))
+  #     hiker4.visit(park, Date.new(1980, 6, 25))
+  #     hiker1.visit(park, Date.new(2020, 6, 23))
+  #     hiker2.visit(park, Date.new(2020, 6, 24))
+  #     hiker3.visit(park, Date.new(2020, 6, 24))
+  #     hiker4.visit(park, Date.new(2020, 6, 25))
+
+  #     expected = {
+  #       1980 => {
+  #         "06/23" => {
+  #           hiker1 => [trail2, trail3]
+  #         },
+  #         "06/24" => {
+  #           hiker2 => [trail1]
+  #           hiker3 => [trail]
+  #         },
+  #         "06/25" => {
+  #           <Hiker:0x00007f8f02326390...> => [#<Trail:0x00007f8f022e5160...>]
+  #         }
+  #       },
+  #       2020 => {
+  #         "06/23" => {
+  #           #<Hiker:0x00007f8f02184208...> => [#<Trail:0x00007f8f040e25c8...>, #<Trail:0x00007f8f03191ee8...>]
+  #         },
+  #         "06/24" => {
+  #           #<Hiker:0x00007f8f029afb30...> => [#<Trail:0x00007f8f022c6878...>],
+  #           #<Hiker:0x00007f8f04045e30...> => [#<Trail:0x00007f8f022e5160...>]
+  #         },
+  #         "06/25" => {
+  #           #<Hiker:0x00007f8f02326390...> => [#<Trail:0x00007f8f022e5160...>]
+  #         }
+  #     }
+  #   end
+  # end
 end
