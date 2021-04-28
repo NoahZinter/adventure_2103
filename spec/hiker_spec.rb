@@ -1,4 +1,5 @@
 require './lib/hiker'
+require './lib/park'
 
 describe Hiker do
   describe '#initialize' do
@@ -49,6 +50,19 @@ describe Hiker do
         'trail mix' => 3
       }
       expect(hiker.snacks).to eq expected
+    end
+  end
+
+  describe '#visit' do
+    it 'adds park to parks_visited array' do
+      hiker = Hiker.new('Dora', :moderate)
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
+
+      hiker.visit(park1)
+      hiker.visit(park2)
+
+      expect(hiker.parks_visited).to eq ([park1, park2])
     end
   end
 end
