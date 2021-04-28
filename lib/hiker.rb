@@ -23,6 +23,8 @@ class Hiker
   end
 
   def possible_trails
-
+    all_trails.select do |trail|
+      trail.level == @experience_level
+    end
   end
 end
