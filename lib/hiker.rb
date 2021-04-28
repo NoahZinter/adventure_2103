@@ -15,4 +15,14 @@ class Hiker
   def visit(park)
     @parks_visited << park
   end
+
+  def all_trails
+    @parks_visited.map do |park|
+      park.trails
+    end.flatten
+  end
+
+  def possible_trails
+
+  end
 end
