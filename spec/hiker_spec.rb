@@ -65,6 +65,18 @@ describe Hiker do
 
       expect(hiker.parks_visited).to eq ([park1, park2])
     end
+
+    it 'will not add parks already visited' do
+      hiker = Hiker.new('Dora', :moderate)
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
+
+      hiker.visit(park1)
+      hiker.visit(park2)
+      hiker.visit(park1)
+
+      expect(hiker.parks_visited).to eq ([park1, park2])
+    end
   end
 
   describe '#all_trails' do

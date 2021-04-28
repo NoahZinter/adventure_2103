@@ -17,7 +17,9 @@ class Hiker
   end
 
   def visit(park)
-    @parks_visited << park
+    if !@parks_visited.include?(park)
+      @parks_visited << park
+    end
   end
 
   def all_trails
