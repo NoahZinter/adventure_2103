@@ -111,6 +111,11 @@ describe Park do
         :strenuous => ["Chimney Rock Loop"]
       }
       expect(park1.trails_by_level).to eq expected_1
+
+      expected_2 = {
+     :moderate => ["Queen's/Navajo Loop", "Tower Bridge"],
+     :easy => ["Rim Trail"]
+      }
     end
   end
 end
