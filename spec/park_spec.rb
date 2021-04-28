@@ -81,6 +81,7 @@ describe Park do
       hiker.visit(park2)
 
       expect(park1.hikeable_miles).to eq 7.5
+      expect(park2.hikeable_miles).to eq 16.9
     end
   end
 end
