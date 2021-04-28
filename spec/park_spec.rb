@@ -119,4 +119,11 @@ describe Park do
       expect(park2.trails_by_level).to eq expected_2
     end
   end
+
+  describe '#visitors_log' do
+    it 'populates a nested hash with a year holding a date/hiker kv pair with possible trails' do
+
+
+    end
+  end
 end

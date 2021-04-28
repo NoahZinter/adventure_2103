@@ -1,6 +1,7 @@
 require './lib/hiker'
 require './lib/trail'
 require './lib/park'
+require 'date'
 
 describe Hiker do
   describe '#initialize' do

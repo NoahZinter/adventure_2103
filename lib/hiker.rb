@@ -20,6 +20,7 @@ class Hiker
     if !@parks_visited.include?(park)
       @parks_visited << park
     end
+    date_of_visit = Date.today
   end
 
   def all_trails
