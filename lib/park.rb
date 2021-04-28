@@ -21,4 +21,18 @@ class Park
       trail.length
     end.sum
   end
+
+  def trails_by_level
+    trail_guide = @trails.reduce({}) do |guide, trail|
+      guide.update(trail.level => [])
+    end
+    trail_guide.map do |level, name|
+      @trails.each do |trail|
+        if level == trail.level
+          name << trail.name
+        end
+      end
+    end
+    trail_guide
+  end
 end
