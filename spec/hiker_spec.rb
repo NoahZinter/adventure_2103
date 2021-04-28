@@ -19,6 +19,12 @@ describe Hiker do
 
       expect(hiker.snacks).to eq ({})
     end
+
+    it 'starts with empty array of parks visited' do
+      hiker = Hiker.new('Dora', :moderate)
+
+      expect(hiker.parks_visited).to eq ([])
+    end
   end
 
   describe '#pack' do
@@ -28,6 +34,18 @@ describe Hiker do
       hiker.pack('trail mix', 3)
       expected = {
         'water' => 1,
+        'trail mix' => 3
+      }
+      expect(hiker.snacks).to eq expected
+    end
+
+    xit 'will update quantity of snack already exists' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+      hiker.pack('water', 1)
+      expected = {
+        'water' => 2,
         'trail mix' => 3
       }
       expect(hiker.snacks).to eq expected
