@@ -78,6 +78,15 @@ describe Hiker do
 
       expect(hiker.parks_visited).to eq ([park1, park2])
     end
+
+    it 'will default to todays date' do
+      hiker = Hiker.new('Dora', :moderate)
+      park1 = Park.new('Capitol Reef')
+      park2 = Park.new('Bryce Canyon')
+      allow(Date).to receive(:today) {Date.new(2020, 1, 31)}
+
+      expect(hiker.visit(park1)).to eq Date.new(2020, 1, 31)
+    end
   end
 
   describe '#all_trails' do

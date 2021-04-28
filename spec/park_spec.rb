@@ -122,8 +122,21 @@ describe Park do
 
   describe '#visitors_log' do
     it 'populates a nested hash with a year holding a date/hiker kv pair with possible trails' do
+      trail1 = Trail.new({name: 'Rim Trail', length: '11 miles', level: :easy})
+      trail2 = Trail.new({name: "Queen's/Navajo Loop", length: '2.9 miles', level: :moderate})
+      trail3 = Trail.new({name: 'Tower Bridge', length: '3 miles', level: :moderate})
+      trail4 = Trail.new({name: 'Peekaboo Loop', length: '5.5 miles', level: :strenuous})
+      park = Park.new('Bryce Canyon')
+      park.add_trail(trail1)
+      park.add_trail(trail2)
+      park.add_trail(trail3)
+      park.add_trail(trail4)
+      hiker1 = Hiker.new('Dora', :moderate)
+      hiker2 = Hiker.new('Frank', :easy)
+      hiker3 = Hiker.new('Jack', :strenuous)
+      hiker4 = Hiker.new('Sally', :strenuous)
 
-
+      
     end
   end
 end

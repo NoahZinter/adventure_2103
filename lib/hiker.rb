@@ -16,11 +16,11 @@ class Hiker
     end
   end
 
-  def visit(park)
+  def visit(park, date = Date.today)
     if !@parks_visited.include?(park)
       @parks_visited << park
     end
-    date_of_visit = Date.today
+    date
   end
 
   def all_trails
