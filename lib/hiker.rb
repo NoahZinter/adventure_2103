@@ -6,4 +6,8 @@ class Hiker
     @experience_level = experience_level
     @snacks = Hash.new
   end
+
+  def pack(snack, quantity)
+    @snacks[snack] = quantity
+  end
 end
